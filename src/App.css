@@ -1,0 +1,27 @@
+.App {
+width: 100vw;
+height: 100vh;
+background-color: aqua;
+}
+
+.Sidebar{
+
+background-color: #dfdfe1;
+height: 85%;
+width: 250px;
+
+}
+
+.Footer{
+
+
+width: 100vw;
+ background-color:  #1976d2;
+ height: 100px;
+ position: sticky;
+ justify-content: center;
+ align-items: center;
+
+ display: flex;
+
+}
