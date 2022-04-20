@@ -1,9 +1,11 @@
 import React from 'react';
 import '../../App.css';
+import { useDispatch } from 'react-redux';
 import { SidebarData } from './SideBarData';
-import { bookContent } from '../../actions/index';
+import { bookContent } from '../../redux/contentSlicer';
 
 function SideBar() {
+  const dispatch = useDispatch();
   return (
     <div className="Sidebar">
 
@@ -14,8 +16,8 @@ function SideBar() {
     SidebarData.map((data) => (
 
       <li
-        onClick={() => { window.location.pathname = data.title; }}
-        onKeyDown={() => { window.location.pathname = data.title; }}
+        onClick={() => { dispatch(bookContent(data)); }}
+        onKeyDown={() => { dispatch(bookContent(data)); }}
         className="row"
         key={data.title}
       >

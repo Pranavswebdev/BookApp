@@ -1,15 +1,12 @@
 import './App.css';
-import SideBar from './Components/Sidebar/SideBar';
-import Footer from './Components/Footer/Footer';
-import BookContent from './Components/BookContent/BookContent';
+
+import PageRouters from './PageRouters/PageRouters';
 
 function App() {
   return (
     <div className="App">
 
-      <SideBar />
-      <BookContent />
-      <Footer />
+      <PageRouters />
 
     </div>
   );

@@ -2,6 +2,8 @@ import React from 'react';
 import '../../App.css';
 import { BsPinterest } from 'react-icons/bs';
 import { MdFacebook } from 'react-icons/md';
+import Button from '@mui/material/Button';
+import AddIcon from '@mui/icons-material/Add';
 
 import {
   AiFillTwitterCircle,
@@ -23,6 +25,9 @@ function Footer() {
       <BsPinterest className="icon" />
       <AiFillGithub className="icon" />
       <AiOutlineCodepen className="icon" />
+      <Button className="Addnew" style={{ color: 'black', textTransform: 'none' }} endIcon={<AddIcon />}>
+        Add New Page
+      </Button>
     </div>
   );
 }

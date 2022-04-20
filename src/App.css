@@ -7,7 +7,7 @@ background-color: rgb(255, 255, 255);
 .Sidebar{
 
 background-color: #dfdfe1;
-height: 85%;
+height: 42rem;
 width: 250px;
 
 }
@@ -18,7 +18,7 @@ width: 250px;
 width: 100vw;
  background-color:  #1976d2;
  height: 100px;
- position: sticky;
+ position: relative;
  justify-content: center;
  align-items: center;
 ;
@@ -61,7 +61,6 @@ align-items: center;
 }
 
 
-
 .SidebarList .row:hover{
 
 
@@ -72,8 +71,10 @@ background-color: #cbcdce;
 .BookContent{
 
 position: fixed;
-left: 20rem;
-top: 20rem;
+left: 17rem;
+top: 3rem;
+overflow-y: scroll;
+height: 70vh ;
 
 }
 
@@ -85,8 +86,21 @@ margin: 0;
 
 
 .Addnew{
-position: fixed;
-top: 14rem;
-left: 58rem;
+position:absolute;
+top: -5rem;
+left: 32rem;
 text-transform: none;
+
+}
+
+
+.PageHeading
+{
+
+justify-content: center;
+align-items: center;
+display: flex;
+position: fixed;
+top: 0rem;
+right: 32rem;
 }

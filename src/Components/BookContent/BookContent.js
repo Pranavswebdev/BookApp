@@ -1,15 +1,27 @@
 import React from 'react';
 import '../../App.css';
-import Button from '@mui/material/Button';
-import AddIcon from '@mui/icons-material/Add';
+
+import { FaEdit } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 
 function BookContent() {
+  const { content } = useSelector((state) => state.content);
   return (
     <div className="BookContent">
-      <h1>Book Content</h1>
-      <Button className="Addnew" style={{ color: 'black', textTransform: 'none' }} endIcon={<AddIcon />}>
-        Add New Page
-      </Button>
+      <div className="PageHeading">
+
+        <h3>
+          {' '}
+          {content.title}
+          {' '}
+        </h3>
+
+        <FaEdit onClick={() => { window.location.pathname = '/edit'; }} style={{ padding: '0.5rem', marginLeft: '1rem' }} size="1rem" />
+
+      </div>
+
+      <p>{content.content}</p>
+
     </div>
   );
 }
