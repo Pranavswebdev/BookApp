@@ -15,7 +15,6 @@ import {
 function Footer() {
   return (
     <div className="Footer">
-
       <MdFacebook className="icon" />
       <AiFillTwitterCircle className="icon" />
       <AiFillYoutube className="icon" />
@@ -24,7 +23,6 @@ function Footer() {
       <BsPinterest className="icon" />
       <AiFillGithub className="icon" />
       <AiOutlineCodepen className="icon" />
-
     </div>
   );
 }

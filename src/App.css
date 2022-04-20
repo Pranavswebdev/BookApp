@@ -30,6 +30,63 @@ width: 100vw;
 
 color: white;
 margin: 5px;
+cursor: pointer;
 
 
+}
+
+.SidebarList{
+
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow-y: scroll;
+}
+
+.SidebarList .row{
+cursor: pointer;
+width: 95%;
+height: auto;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 10px;
+line-height: 2rem;
+border: 1px solid #c9c5c6 ;
+margin: 0;
+list-style-type: non;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+
+
+.SidebarList .row:hover{
+
+
+background-color: #cbcdce;
+
+}
+
+.BookContent{
+
+position: fixed;
+left: 20rem;
+top: 20rem;
+
+}
+
+body{
+
+padding: 0;
+margin: 0;
+}
+
+
+.Addnew{
+position: fixed;
+top: 14rem;
+left: 58rem;
+text-transform: none;
 }
