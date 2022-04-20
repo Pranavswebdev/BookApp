@@ -9,8 +9,6 @@ function BookContent() {
       <h1>Book Content</h1>
       <Button className="Addnew" style={{ color: 'black', textTransform: 'none' }} endIcon={<AddIcon />}>
         Add New Page
-
-        
       </Button>
     </div>
   );
