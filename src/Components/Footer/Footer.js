@@ -25,7 +25,7 @@ function Footer() {
       <BsPinterest className="icon" />
       <AiFillGithub className="icon" />
       <AiOutlineCodepen className="icon" />
-      <Button className="Addnew" style={{ color: 'black', textTransform: 'none' }} endIcon={<AddIcon />}>
+      <Button className="Addnew" onClick={() => { window.location.pathname = '/create'; }} style={{ color: 'black', textTransform: 'none' }} endIcon={<AddIcon />}>
         Add New Page
       </Button>
     </div>

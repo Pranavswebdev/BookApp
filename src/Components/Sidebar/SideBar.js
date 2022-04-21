@@ -12,7 +12,6 @@ function SideBar() {
       <ul className="SidebarList">
 
         {
-
     SidebarData.map((data) => (
 
       <li
