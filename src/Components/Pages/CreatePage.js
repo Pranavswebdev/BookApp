@@ -26,6 +26,8 @@ function CreatePage() {
   const saveHandler = () => {
     console.log(title);
 
+    if (title === '' || null) return;
+
     var pageContent = {
 
       id: uuid(),

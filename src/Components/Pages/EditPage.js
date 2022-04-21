@@ -25,6 +25,7 @@ function EditPage() {
   const saveHandler = () => {
     console.log(title);
 
+    if (title === '' || null) return;
     var pageContent = {
 
       id: pageId.id,

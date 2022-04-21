@@ -6,9 +6,16 @@ import AddIcon from '@mui/icons-material/Add';
 import uuid from 'react-uuid';
 import { bookContent } from '../../redux/contentSlicer';
 
+function useForceUpdate() {
+  const [value, setValue] = useState(0); // integer state
+  console.log(value);
+  return () => setValue((newvalue) => newvalue + 1); // update the state to force render
+}
 function SideBar() {
   const dispatch = useDispatch();
   const [sideBarData, setSideBarData] = useState([]);
+  const [active, setActive] = useState([]);
+  const forceUpdate = useForceUpdate();
 
   useEffect(() => {
     var SidebarData = JSON.parse(localStorage.getItem('pageContent'));
@@ -78,7 +85,13 @@ function SideBar() {
 
       localStorage.setItem('pageContent', JSON.stringify(SidebarData));
       setSideBarData(SidebarData);
+      window.history.replaceState(null, 'New Page Title', `${SidebarData[0].id}`);
+      const activeData = () => { dispatch(bookContent(SidebarData[0])); };
+      activeData();
     }
+    const activeData = () => { dispatch(bookContent(SidebarData[0])); };
+    activeData();
+    window.history.replaceState(null, 'New Page Title', `${SidebarData[0].id}`);
   }, []);
 
   return (
@@ -90,10 +103,15 @@ function SideBar() {
           sideBarData?.map((data) => (
 
             <li
-              onClick={() => { dispatch(bookContent(data)); }}
-              onKeyDown={() => { dispatch(bookContent(data)); }}
-              className="row"
-              key={data.title}
+              onClick={() => {
+                dispatch(bookContent(data));
+                window.history.replaceState(null, 'New Page Title', `${data.id}`);
+                forceUpdate();
+                console.log(data.id);
+              }}
+              onKeyDown={() => forceUpdate}
+              className={`http://localhost:3000/${data.id}` === document.URL ? 'row active' : 'row'}
+              key={data.id}
             >
 
               <div>{data.title}</div>
