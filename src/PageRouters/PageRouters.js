@@ -17,7 +17,7 @@ function PageRouters() {
 
           <Route exact path="/create" element={<CreatePage />} />
           <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/edit" element={<EditPage />} />
+          <Route exact path="/edit/:id" element={<EditPage />} />
           <Route exact path="/editor" element={<TextEditor />} />
 
         </Routes>

@@ -1,6 +1,6 @@
 import React from 'react';
 import SideBar from '../Sidebar/SideBar';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import BookContent from '../BookContent/BookContent';
 
 function HomePage() {
@@ -8,7 +8,7 @@ function HomePage() {
     <div>
 
       <SideBar />
-      <Footer />
+      {/* <Footer /> */}
       <BookContent />
 
     </div>

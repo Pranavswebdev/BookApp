@@ -24,5 +24,7 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'no-param-reassign': 'off',
     'no-underscore-dangle': 'off',
+    'vars-on-top': 'off',
+    'no-var': 'off',
   },
 };

@@ -13,8 +13,6 @@ width: 250px;
 }
 
 .Footer{
-
-
 width: 100vw;
  background-color:  #1976d2;
  height: 100px;
@@ -75,6 +73,7 @@ left: 17rem;
 top: 3rem;
 overflow-y: scroll;
 height: 70vh ;
+max-width: 80vw;
 
 }
 
@@ -87,8 +86,8 @@ margin: 0;
 
 .Addnew{
 position:absolute;
-top: -5rem;
-left: 32rem;
+top: -4rem;
+left: 80rem;
 text-transform: none;
 
 }
@@ -103,4 +102,23 @@ display: flex;
 position: fixed;
 top: 0rem;
 right: 32rem;
+}
+
+.editor{
+
+  position: fixed;
+  left: 4rem;
+  top: 0rem;
+width: 90vw;
+height: 40rem;
+overflow-y: scroll;
+
+
+}
+
+
+.createpage{
+height: 85vh;
+width: 100vw;
+background-color: #ededee;
 }
