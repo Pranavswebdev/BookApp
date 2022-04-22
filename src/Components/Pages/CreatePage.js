@@ -13,10 +13,8 @@ function CreatePage() {
 
   useEffect(() => {
     const json = html2json(content);
-    console.log(json);
 
     const html = json2html(json);
-    console.log(html);
 
     localStorage.setItem('htmlcontent', html);
     const newhtml = localStorage.getItem('htmlcontent');
@@ -24,8 +22,6 @@ function CreatePage() {
   }, []);
 
   const saveHandler = () => {
-    console.log(title);
-
     if (title === '' || null) return;
 
     var pageContent = {
@@ -76,7 +72,7 @@ function CreatePage() {
           value={savedcontent}
           tabIndex={-1} // tabIndex of textarea
           onChange={(newContent) => setContent(newContent)}
-          onBlur={(newContent) => { console.log(newContent); }}
+
         />
         <Button
           onClick={backHome}

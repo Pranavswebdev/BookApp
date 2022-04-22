@@ -12,12 +12,12 @@ function EditPage() {
   const [title, setTitle] = useState('');
   //   const [currentData,setCurrentData] = useState('');
   const pageId = useParams();
-  console.log(pageId.id);
+
   useEffect(() => {
     const pageData = JSON.parse(localStorage.getItem('pageContent'));
-    console.log(pageData);
+
     const currentData = pageData.find((data) => (data?.id === pageId.id));
-    console.log(currentData);
+
     setContent(currentData?.content);
     setTitle(currentData?.title);
   }, []);
@@ -31,9 +31,9 @@ function EditPage() {
       content,
     };
     var contentArr = JSON.parse(localStorage.getItem('pageContent' || '[]'));
-    console.log(contentArr);
+
     var index = contentArr.findIndex((data) => data.id === pageId.id);
-    console.log(index);
+
     contentArr[index] = pageContent;
     localStorage.setItem('pageContent', JSON.stringify(contentArr));
   };
@@ -58,7 +58,7 @@ function EditPage() {
           value={content}
           tabIndex={-1} // tabIndex of textarea
           onChange={(newContent) => setContent(newContent)}
-          onBlur={(newContent) => { console.log(newContent); }}
+
         />
         <Button
           onClick={backHome}

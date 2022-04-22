@@ -20,14 +20,14 @@ function SideBar() {
   const forceUpdate = useForceUpdate();
 
   const toggleMenu = () => {
-    console.log('clicked');
     setMenu(!menu);
   };
 
   useEffect(() => {
     var SidebarData = JSON.parse(localStorage.getItem('pageContent'));
     setSideBarData(SidebarData);
-    setActive(SidebarData[0].id);
+    if (SidebarData) setActive(SidebarData[0]?.id);
+
     if (!SidebarData) {
       SidebarData = [{
         id: uuid(),
@@ -114,7 +114,6 @@ function SideBar() {
 
                 forceUpdate();
                 setActive(data.id);
-                console.log(data.id);
               }}
               onKeyDown={() => forceUpdate}
               className={data.id === active ? 'row active' : 'row'}
