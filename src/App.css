@@ -4,7 +4,7 @@ height: 100vh;
 background-color: rgb(255, 255, 255);
 }
 
-.Sidebar{
+#Sidebar{
 
 background-color: #dfdfe1;
 height: 42rem;
@@ -126,5 +126,154 @@ background-color: #ededee;
 .active{
 
 background-color: rgb(182, 182, 182);
+
+}
+.navMenu{
+
+position: fixed;
+left: 20rem;
+opacity: 0;
+z-index: 20;
+top: 1rem;
+
+}
+
+#input{
+
+
+  border: 0.5px solid grey;
+   margin-bottom: 1rem;
+  width: 80.5rem;
+  height: 2rem;
+  border-radius: 5px;
+
+
+}
+
+@media screen and (max-width: 680px) {
+
+    .BookContent {
+        display: block;
+        z-index: 1;
+    
+    }
+
+    .Footer{
+
+      position: fixed;
+      width:100% ;
+      bottom: 0px;
+
+    }
+
+    .Addnew{
+
+     
+      position: fixed;
+        top:0px;
+        left: 8rem;
+
+    }
+
+    #Sidebar{
+
+      width: 100%;
+      z-index: 2;
+     position: fixed;
+    left: -25rem;
+    
+
+    }
+
+   
+.SidebarList .row{
+cursor: pointer;
+width: 95%;
+height: auto;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 10px;
+line-height: 2rem;
+margin: 0;
+list-style-type: non;
+display: flex;
+   justify-content: center;
+      align-items: center;
+      border: 1px solid #4b4b4b ;
+    
+}
+
+
+  #Sidebar--active {
+
+          width: 100%;
+      z-index: 2;
+     position: fixed;
+    left: 0rem;
+      transition: all 0.5s ease;
+      background-color: #c9c5c6;
+      opacity: 1;
+      height: 80%;
+  
+  
+  }
+
+  .BookContent{
+
+  position: fixed;
+  left: 2rem;
+  top: 10rem;
+  overflow-y: scroll;
+  height: 60vh ;
+  max-width: 80vw;
+
+}
+
+.PageHeading{
+  font-size: small;
+  left: 3rem;
+  width: 19rem;
+}
+
+
+  .navMenu{
+
+  display: block;
+  opacity: 1;
+  position: fixed;
+  left: 1rem;
+}
+
+    .row{
+      border: 1px solid #c9c5c6 ;
+
+    }
+
+.editor{
+
+  position: fixed;
+  left: 1rem;
+  top: 5rem;
+width: 90%;
+height: 30rem;
+overflow-y: scroll;
+
+
+}
+
+
+#input{
+
+width: 98%;
+
+}
+
+
+
+
+
+
+
+
 
 }

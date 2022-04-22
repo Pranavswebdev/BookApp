@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import uuid from 'react-uuid';
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { bookContent } from '../../redux/contentSlicer';
 
 function useForceUpdate() {
@@ -14,13 +15,19 @@ function useForceUpdate() {
 function SideBar() {
   const dispatch = useDispatch();
   const [sideBarData, setSideBarData] = useState([]);
-  const [active, setActive] = useState([]);
+  const [active, setActive] = useState();
+  const [menu, setMenu] = useState(true);
   const forceUpdate = useForceUpdate();
+
+  const toggleMenu = () => {
+    console.log('clicked');
+    setMenu(!menu);
+  };
 
   useEffect(() => {
     var SidebarData = JSON.parse(localStorage.getItem('pageContent'));
     setSideBarData(SidebarData);
-
+    setActive(SidebarData[0].id);
     if (!SidebarData) {
       SidebarData = [{
         id: uuid(),
@@ -85,17 +92,16 @@ function SideBar() {
 
       localStorage.setItem('pageContent', JSON.stringify(SidebarData));
       setSideBarData(SidebarData);
-      window.history.replaceState(null, 'New Page Title', `${SidebarData[0].id}`);
+
       const activeData = () => { dispatch(bookContent(SidebarData[0])); };
       activeData();
     }
     const activeData = () => { dispatch(bookContent(SidebarData[0])); };
     activeData();
-    window.history.replaceState(null, 'New Page Title', `${SidebarData[0].id}`);
   }, []);
 
   return (
-    <div className="Sidebar">
+    <div id={menu ? 'Sidebar' : 'Sidebar--active'}>
 
       <ul className="SidebarList">
 
@@ -105,12 +111,13 @@ function SideBar() {
             <li
               onClick={() => {
                 dispatch(bookContent(data));
-                window.history.replaceState(null, 'New Page Title', `${data.id}`);
+
                 forceUpdate();
+                setActive(data.id);
                 console.log(data.id);
               }}
               onKeyDown={() => forceUpdate}
-              className={`http://localhost:3000/${data.id}` === document.URL ? 'row active' : 'row'}
+              className={data.id === active ? 'row active' : 'row'}
               key={data.id}
             >
 
@@ -126,6 +133,7 @@ function SideBar() {
         Add New Page
       </Button>
 
+      <MenuOpenIcon onClick={toggleMenu} className="navMenu" />
     </div>
   );
 }

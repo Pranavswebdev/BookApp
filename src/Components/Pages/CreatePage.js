@@ -67,14 +67,8 @@ function CreatePage() {
         <input
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Page Title"
-          style={{
-            border: '0.5px solid grey',
-            marginBottom: '1rem',
-            width: '80.5rem',
-            height: '2rem',
-            borderRadius: '5px',
+          id="input"
 
-          }}
         />
 
         <JoditEditor

@@ -16,6 +16,7 @@ function BookContent() {
           {content.title}
           {' '}
         </h3>
+
         <FaEdit onClick={() => { navigate(`/edit/${content?.id}`); }} style={{ padding: '0.5rem', marginLeft: '1rem', cursor: 'pointer' }} size="1rem" />
       </div>
       <div dangerouslySetInnerHTML={{ __html: content.content }} />

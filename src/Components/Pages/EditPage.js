@@ -23,17 +23,13 @@ function EditPage() {
   }, []);
 
   const saveHandler = () => {
-    console.log(title);
-
     if (title === '' || null) return;
-    var pageContent = {
 
+    var pageContent = {
       id: pageId.id,
       title,
       content,
-
     };
-
     var contentArr = JSON.parse(localStorage.getItem('pageContent' || '[]'));
     console.log(contentArr);
     var index = contentArr.findIndex((data) => data.id === pageId.id);
@@ -54,14 +50,7 @@ function EditPage() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Page Title"
-          style={{
-            border: '0.5px solid grey',
-            marginBottom: '1rem',
-            width: '80.5rem',
-            height: '2rem',
-            borderRadius: '5px',
-
-          }}
+          id="input"
         />
 
         <JoditEditor

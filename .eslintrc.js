@@ -26,5 +26,9 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'vars-on-top': 'off',
     'no-var': 'off',
+    'jsx-a11y/no-noninteractive-tabindex': 'off',
+    ' jsx-a11y/tabindex-no-positive': 'off',
+    'positive integer values for tabIndex': 'off',
+    'jsx-a11y/tabindex-no-positive': 'off',
   },
 };
